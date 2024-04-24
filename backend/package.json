@@ -1,0 +1,16 @@
+{
+  "name": "messu_webapp",
+  "version": "1.0.0",
+  "description": "Digital collection management and voting system",
+  "main": "index.js",
+  "scripts": {
+    "start-mongodb": "mongod --config \"C:\\Program Files\\MongoDB\\Server\\7.0\\bin\\mongod.cfg\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.3.2"
+  }
+}
