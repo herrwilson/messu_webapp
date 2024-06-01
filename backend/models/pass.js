@@ -4,10 +4,12 @@ const passSchema = new mongoose.Schema({
   userID: {
     type: String,
     required: true,
+    unique: true,
   },
   companyID: {
     type: String,
     required: true,
+    unique: true,
   },
 });
 

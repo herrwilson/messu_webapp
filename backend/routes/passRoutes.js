@@ -14,15 +14,15 @@ router.get("/api/pass", async (req, res) => {
 
 // route to create a new pass
 router.post("/api/pass", async (req, res) => {
-  const pass = new Pass({
-    userID: req.body.userID,
-    companyID: req.body.companyID,
-  });
   try {
-    const newPass = await pass.save();
+
+    const { userID, companyID } = req.body;
+    const newPass = await Pass.create({ userID, companyID });
+    
     res.status(201).json(newPass);
+
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    res.status(500).json({ message: 'Internal server error' });
   }
 });
 
@@ -37,3 +37,5 @@ router.delete("/api/pass/:id", async (req, res) => {
 });
 
 module.exports = router;
+
+

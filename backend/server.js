@@ -7,19 +7,19 @@ const passRoutes = require("./routes/passRoutes");
 const sweepstakeRoutes = require("./routes/sweepstakeRoutes");
 const userRoutes = require("./routes/userRoutes");
 const voteRoutes = require("./routes/voteRoutes");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 // middleware
 app.use(express.json());
+app.use(bodyParser.json());
+app.use(cors());
 
-// company routes
+// routes
 app.use(companyRoutes);
-// pass routes
 app.use(passRoutes);
-// sweepstake routes
 app.use(sweepstakeRoutes);
-// user routes
 app.use(userRoutes);
-// vote routes
 app.use(voteRoutes);
 
 // start the server & listen to port
